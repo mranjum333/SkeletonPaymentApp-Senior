@@ -7,6 +7,7 @@ import com.imobile3.groovypayments.R;
 import com.imobile3.groovypayments.ui.BaseActivity;
 import com.imobile3.groovypayments.ui.adapter.MainDashboardButton;
 import com.imobile3.groovypayments.ui.adapter.MainDashboardButtonAdapter;
+import com.imobile3.groovypayments.ui.chart.PieChartActivity;
 import com.imobile3.groovypayments.ui.misc.SecretFunctionsActivity;
 import com.imobile3.groovypayments.ui.orderentry.OrderEntryActivity;
 import com.imobile3.groovypayments.ui.orderhistory.OrderHistoryActivity;
@@ -86,9 +87,12 @@ public class MainDashboardActivity extends BaseActivity {
                 startActivity(new Intent(this, UserProfileActivity.class));
                 break;
 
+            case DailyReport:
+                startActivity(new Intent(this, PieChartActivity.class));
+                break;
+
             case Management:
             case TimeTracking:
-            case Placeholder1:
             case Placeholder2:
                 showAlertDialog(
                         R.string.common_under_construction,
@@ -106,7 +110,7 @@ public class MainDashboardActivity extends BaseActivity {
         dashboardButtons.add(MainDashboardButton.SecretFunctions);
         dashboardButtons.add(MainDashboardButton.Management);
         dashboardButtons.add(MainDashboardButton.TimeTracking);
-        dashboardButtons.add(MainDashboardButton.Placeholder1);
+        dashboardButtons.add(MainDashboardButton.DailyReport);
         dashboardButtons.add(MainDashboardButton.Placeholder2);
         return dashboardButtons;
     }
